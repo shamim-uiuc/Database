@@ -1,0 +1,4 @@
+library,experiment_id,experiment_name,tissue_used,sequence_platform,sequencing_machine,sequencing_mode,sequence_length
+Library1,20,Global Transcripts profiling of cotyledons,cotyledons,Illumina,HiSeq2000,Single,100
+Library2,21,Global Transcripts profiling of seed coats,Seed coat,Illumina,HiSeq2000,Single,100
+Library3,22,Developmental profiles of mature cotyledons,cotyledons,Illumina,HiSeq2000,Single,100
