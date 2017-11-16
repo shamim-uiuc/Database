@@ -3,7 +3,7 @@ import sqlite3
 
 #create the database
 conn=sqlite3.connect('rnaseq.db')
-print "Database connection successful"
+#print "Database connection successful"
 
 #create 'metadata' table
 try:
@@ -36,6 +36,6 @@ except:
 	print 'Run into error'
 	pass
 
-print "Tables are created successfully"
+#print "Tables are created successfully"
 conn.commit()
 conn.close()
