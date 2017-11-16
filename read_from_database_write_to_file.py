@@ -15,7 +15,7 @@ print "Opened database successfully";
 #   PRIMARY KEY(gene_model, experiment_id)
 #);
 
-output_file=open("gene_anno_expression.txt", "wb");
+output_file=open("gene_anno_expression.csv", "wb");
 output_file.write("Gene_id, Annotation, Expression1, Expression2, Expression3\n");
 
 ############################################################################# simple query reading from a single table
@@ -26,7 +26,7 @@ rows=cursor.fetchall()
 i=0;
 while (i<len(rows)):
 	#read next 3 rows: i, i+1, i+2 for 3 expression data
-	print >> output_file, rows[i][0], ",", rows[i][1].strip(), ",", rows[i][2], ",", rows[i+1][2], ",", rows[i+2][2], "\n" 
+	print >> output_file, rows[i][0], ",", rows[i][1].strip(), ",", rows[i][2], ",", rows[i+1][2], ",", rows[i+2][2] 
 	i=i+3
 
 print "Operation done successfully";
