@@ -2,7 +2,7 @@
 
 import sqlite3
 conn=sqlite3.connect('rnaseq.db')
-print 'connected to database'
+#print 'connected to database'
 
 ################################################################ Metadata Table ###############################################			
 ## table metadata schema:
@@ -89,5 +89,5 @@ with open("gene_model_with_header.csv", "r") as file:
 
 #commit and close the database connection
 conn.commit()
-print "Operation done successfully";
+#print "Operation done successfully";
 conn.close()
