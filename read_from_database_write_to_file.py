@@ -15,7 +15,7 @@ print "Opened database successfully";
 #   PRIMARY KEY(gene_model, experiment_id)
 #);
 
-output_file=open("gene_anno_expression.csv", "wb");
+output_file=open("gene_anno_expression.csv", "wb"); #also supports .txt
 output_file.write("Gene_id, Annotation, Expression1, Expression2, Expression3\n");
 
 ############################################################################# simple query reading from a single table
