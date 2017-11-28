@@ -1,11 +1,3 @@
-# python script to create sqlite RNASeq database
-# python script to read csv file and insert data into the database
-# python script for query to retrieve data from database
-
-# Md Shamimuzzaman
-# Postdoctoral Research Computational Biologist at USDA-ARS
-# Date:05-10-2017 
-
 #Command to run:
 chmod +x Main.py
 python -B Main.py
