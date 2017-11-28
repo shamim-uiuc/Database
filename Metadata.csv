@@ -1,0 +1,4 @@
+Experiment_id,Project_name,Tissue,Sequencing_platform,Sequencing_machine,Sequencing_mode,Sequence_length
+1,Global Transcripts profiling of leaf,Leaf,Illumina,HiSeq2000,Single end,100
+2,Global Transcripts profiling of seeds,Seeds,Illumina,HiSeq2000,Single end,100
+3,Transcripts profiles under biotic stress,Root,Illumina,HiSeq2000,Single end,100
