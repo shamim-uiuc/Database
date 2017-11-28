@@ -5,36 +5,52 @@ import sqlite3
 conn=sqlite3.connect('rnaseq.db')
 #print "Database connection successful"
 
-#create 'metadata' table
+#create 'gene' table
 try:
-	conn.execute('''CREATE TABLE metadata(
-   	experiment_id   int  NOT NULL,
-   	library        varchar(15)     NOT NULL,
-   	experiment_name   varchar(100),
-   	tissue_used   varchar(30),
-   	sequence_platform   varchar(30),
-   	sequencing_machine   varchar(30),
-   	sequencing_mode    varchar(30),
-   	sequence_length int,
-   	PRIMARY KEY(experiment_id)
+	conn.execute('''CREATE TABLE gene(
+	Gene_id varchar(30) NOT NULL,
+	Gene_length NOL NULL,
+   	Annotation       varchar(100),
+	Pathway varchar(100),
+   	PRIMARY KEY(Gene_id)   
 	);''')
 except:
 	print 'Run into error'
 	pass
 
-#create 'gene' table
+
+#create table 'metadata'
 try:
-	conn.execute('''CREATE TABLE gene(
-   	gene_model varchar(30) NOT NULL,
-   	experiment_id    int   NOT NULL,
-   	rpkm        real     NOT NULL,
-   	annotation       varchar(100),
-  	FOREIGN KEY(experiment_id) REFERENCES metadata(experiment_id),
-   	PRIMARY KEY(gene_model, experiment_id)   
-	);''')
+        conn.execute('''CREATE TABLE metadata(
+        Experiment_id   int  NOT NULL,
+        Project_name   varchar(100),
+        Tissue   varchar(30),
+        Sequencing_platform   varchar(30),
+        Sequencing_machine   varchar(30),
+        Sequencing_mode    varchar(30),
+        Sequence_length int,
+        PRIMARY KEY(Experiment_id)
+        );''')
 except:
-	print 'Run into error'
-	pass
+        print 'Run into error'
+        pass
+
+#create table 'expression'
+try:
+        conn.execute('''CREATE TABLE expression(
+        Experiment_id   int  NOT NULL,
+        Gene_id varchar(30) NOT NULL,
+	Norm_method varchar(50) NOT NULL,
+	Expression_level real NOT NULL,
+  	FOREIGN KEY(Gene_id) REFERENCES gene(Gene_id),
+  	FOREIGN KEY(Experiment_id) REFERENCES metadata(Experiment_id),
+        PRIMARY KEY(Gene_id, Experiment_id, Norm_method)
+        );''')
+except:
+        print 'Run into error'
+        pass
+
+	
 
 #print "Tables are created successfully"
 conn.commit()
